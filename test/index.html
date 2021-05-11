@@ -80,7 +80,7 @@
 
                     let characteristicUuid = "0000ffe1-0000-1000-8000-00805f9b34fb"; //BLE用於回覆命令
 
-                    navigator.bluetooth.requestDevice({filters: [{services: [serviceUuid]}]})
+                    navigator.bluetooth.requestDevice({filters: [{name: 'HC-08'},{ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }] })
                         .then(device => 
                         {
                             log('Connecting...');
