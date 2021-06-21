@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+@media screen{
+
+    .main-1{
+        /* border: 1px solid black; */
+
+        padding:50px 80px 50px;
+        width: 100%;
+
+        height:1000px;
+
+        max-width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+    .main-1_all{
+        /* border: 1px solid black; */
+
+        width: 1100px;
+        max-width: 100%;
+        height: 1000px;
+        margin: 0 auto;
+    }
+    .main-1_title{
+        /* border: 1px solid black; */
+        width: 40%;
+        text-align: center;
+        margin: 0px auto 50px;
+        font-size: 30px;
+        padding:20px;
+        color: #3E6259;
+        background-color: #eae8e0;
+        border-right: 5px solid #A7754D;
+        font-weight: 700;
+    }
+    .input_all{
+        /* border: 1px solid black; */
+        margin: 0 auto;
+        width: 800px;
+    }
+
+    .input_label{
+        /* border: 1px solid black; */
+        width: 10%;
+
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 30px 0;
+        padding-left: 10px;
+
+    
+    }
+
+    /*https://www.jianshu.com/p/9b4b60b8d475
+      美化input*/
+
+    .email{
+
+        display: inline-block;
+        outline-style: none ;
+        border: 0px;
+        width: 90%;
+        font-size: 18px;
+        /* border: 1px solid #ccc; */
+        /* border-radius: 3px; */
+
+    }
+    .email:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+    .message{
+       
+        display:inline-block;
+        outline-style: none ;
+        border: 0px;
+        margin: 0px auto;
+        width: 100%;
+        height: 600px;
+        font-size: 18px;
+        padding: 15px;
+
+        resize: none;
+        /* border: 1px solid #ccc; */
+        /* border-radius: 3px; */
+
+       
+    }
+
+    .message:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+
+    #btn{
+
+        padding: 10px 30px 10px;
+        display: block;
+        margin: 30px auto 20px;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: #3E6259;
+        color: #F0F3F5;
+    }
+
+}
+
+/*        適用螢幕寬度小於480px的裝置（當螢幕小於480px時）(手機)*/
+@media screen and (max-width:480px){
+
+    
+}
+
+
+/*        適用於平版直著拿的情況（平版橫著拿的情況就和電腦螢幕相同）*/
+@media screen and (min-width:481px) and (max-width:768px){
+    
+} 

@@ -1,0 +1,143 @@
+@media screen{
+
+
+    /*-------------------讓footer置底--------------*/
+    html, body {
+        height: 100%;
+        margin: 0;
+      }
+      .wrapper {
+        min-height: 100%;
+      
+        /* Equal to height of footer */
+        /* But also accounting for potential margin-bottom of last child */
+        margin-bottom: -100px;
+      }
+      .footer,
+      .push {
+        height: 100px;
+      }
+
+    /*----------------------------------------------*/  
+
+    .classification_title_text{
+        font-size:80px;
+        /* padding-left: 100px; */
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        color:#A7754D;
+        width: 85%;
+        margin:  0 auto 30px;
+        padding-right: 30px;
+        text-align: right;
+
+
+
+
+    }
+    .main-1{
+        /* border: 1px solid black; */
+        height: 5600px;    /*依照各文章長度客製化*/
+    }
+    .main-1_all{
+        /* border: 1px solid black; */
+        width: 1100px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 80px 100px 80px 100px;
+        height: 100%;
+        
+    }       
+    
+    .main-1_title{
+        
+        /* border: 1px solid black; */
+        width: 50%;
+        margin-bottom: 30px;
+        /* text-align: center; */
+        font-size: 50px;
+        font-weight: 800;
+        color: #3E6259;
+    }
+
+    .main-1_date{
+        margin: 30px 0 30px;
+        
+    }    
+
+    h3{
+        font-size: 30px;
+        font-weight: 700;
+        color:#A7754D;
+        margin: 30px 0 30px;
+
+    }
+    .main-1_content{
+        line-height: 2em;
+        padding: 30px;
+        font-family: '微軟正黑體';
+        font-size: 20px;
+        font-weight: 500;
+    }
+    pre{
+        margin: 10px 0 10px;
+        border: 1px solid #9EA3B0;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: white;
+    }
+    .output{
+        border: 1px solid #9EA3B0;
+        border-radius: 10px;
+        margin: 10px 0 10px;
+        width: 100%;
+        padding: 3px 20px ;
+        background-color: white;
+
+
+
+
+    }
+    b{
+        font-weight: 700;
+        color: #D1462F;
+    }
+    .b2{
+        font-weight: 700;
+        color: #048BA8;
+    }
+
+    img{
+        margin:30px 0;
+    }
+
+    .article_content_a{
+        color: #F26419;
+        font-weight: 600;
+    }
+    .article_content_a:visited{
+        color: #F26419;
+
+    }
+    .article_content_a:hover{
+        color: #D1462F;
+    }
+    .article_content_a:active{
+        color: #048BA8;
+    }
+    
+
+}
+
+/*        適用螢幕寬度小於480px的裝置（當螢幕小於480px時）(手機)*/
+@media screen and (max-width:480px){
+
+    
+}
+
+
+/*        適用於平版直著拿的情況（平版橫著拿的情況就和電腦螢幕相同）*/
+@media screen and (min-width:481px) and (max-width:768px){
+    
+} 

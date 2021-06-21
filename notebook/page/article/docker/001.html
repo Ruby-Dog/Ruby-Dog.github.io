@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../../../static/css/reset.css">
+        <link rel="stylesheet" href="../../../static/css/css_header&footer.css">
+        <link rel="stylesheet" href="../../../static/css/page/article/css_article_page.css">
+        <link rel="stylesheet" href="../../../static/css/page/article/docker/css_docker_article_001.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    </head>
+    <body>
+
+
+        <header class="clearfix">
+
+            <ul class="banner clearfix" style="list-style-type:none">
+                <li class="logo"><a href="../../../index.html">RubyDog NoteBook</div>
+                <li class="null">&ensp;</div>
+                <li class="banner_nav"><a href="../../../index.html">Home</a></li>
+                <li class="banner_nav"><a href="#">Article</a></li>
+                <li class="banner_nav"><a href="#">About us</a></li>
+                <li class="banner_nav"><a href=".././../contact.html">Contact us</a></li>
+            </ul>
+
+            <ul class="classification_nav clearfix" style="list-style-type:none">
+                
+                <li><a href="../c/index.html" class="classification_nav_item">C</a></li>
+                <li><a href="../java/index.html" class="classification_nav_item">JAVA</a></li>
+                <li><a href="../python/index.html" class="classification_nav_item">Python</a></li>
+                <li><a href="../web/index.html" class="classification_nav_item">WEB</a></li>
+                <li class="now_page"><a href="../docker/index.html" class="classification_nav_item">Docker</a></li>
+
+            </div>
+            
+        </header>
+      
+
+
+        <main class="wrapper">
+                <div class="main-1">
+                    <div class="main-1_all">
+                        <div class="classification_title_text">Docker</div>
+                        <div class="main-1_title">基本docker指令</div>
+                        <div class="main-1_date">2021/05/15</div>
+                        <div class="main-1_content">
+
+                            <h3>查看docker版本</h3>
+                            <pre>docker  --version</pre>
+
+                            <h3>查詢映像檔</h3>
+                            <pre>docker  serach  [關鍵字]</pre>>
+                            docker官方映像倉庫(Docker Hub Registry)的映象檔全名都是如下格式:
+                            <pre>[username]/[repository]</pre>
+                    
+                            <h3>下載映像檔</h3>
+                            <pre>docker  pull  [映像檔名稱]</pre>     
+                                        
+                            <h3>建立並啟動容器</h3>
+                            <pre>docker  run   [映像檔名稱]  [在容器中需要執行的命令]</pre>  
+                            例:
+                            <pre>docker  run  learn/tutorial  echo  "hello world"</pre> 
+                            <img src="../../../img/article/docker/001/a.png" width="100%">
+
+                            <h3>修改容器</h3>
+                            EX: 在容器中安裝工具ping : 
+                            <pre>docker  run  learn/tutorial  apt-get  install  -y  ping</pre>
+                            <b class="b2">( 在非互動模式下安裝套件，記得使用「 -y 」)</b>
+                            <img src="../../../img/article/docker/001/b.png" width="100%">
+                            
+                            <h3>建立新映像檔</h3>
+                            <b class="b2">將裝了ping套件的容器製作成映像檔 : </b>
+                            <br>
+                            顯示本機上最近建立的容器資訊:
+                            <pre>docker ps -l</pre>
+                            <img src="../../../img/article/docker/001/c.png" width="100%">
+                            可以看到，這個容器的command為「apt-get install ping」，取他的id
+                            <br>
+                            <br>
+                            <b class="b2">提交新的映像檔</b>
+                            <br>
+                            <pre>docker  commit  [本機的容器ID]  [名字]</pre>
+                            例:
+                            <img src="../../../img/article/docker/001/d.png" width="100%">
+                            <br>
+                            <br>
+
+                            製作成功
+                            <img src="../../../img/article/docker/001/e.png" width="100%">
+                            <br>
+                            <br>
+                            使用新的映像檔
+                            <img src="../../../img/article/docker/001/f.png" width="100%">
+                            <br>
+                            <br>
+                            <h3>查詢容器資訊</h3>
+                            <b class="b2">看到所有正在執行的容器:</b>
+                            <br>
+                            <pre>docker  ps</pre>
+                            <br>
+                            <b class="b2">看到單個容器詳細資訊:</b>
+                            <pre>docker  inspect  [容器ID  (or ID的前3~4個字元)] </pre>
+                            <br>
+                            <br>
+
+                            <h3>把新映像檔上傳倉庫</h3>
+                            <b class="b2">查看本機映像檔清單</b>
+                            <pre>docker  images</pre>
+                            or
+                            <pre>docker  image  ls</pre>
+                            <br>
+
+                            <b class="b2">把映像檔推送到Dockerhub</b>
+                            <pre>docker  push  [使用者名稱]/[映像檔名稱]</pre>
+                            <br>
+                            <a class="article_content_a" href="https://hub.docker.com/signup">https://hub.docker.com/signup</a>
+                            <br>
+                            在上面這個網址註冊Dockerhub帳號，使用docker  login登入就可以做上傳操作
+                            <br>
+
+
+
+
+                        </div>    
+                    
+                    
+                    </div>
+
+
+
+   
+                </div>
+    
+    
+    
+            <div class="push"></div>
+        </main>
+      
+        
+        
+
+
+        <footer class="footer">
+            <div class="footer_all">
+                <div class="footer_title">
+                    ©&ensp;RubyDog&ensp;NoteBook&ensp;2021
+                </div>
+
+            </div>
+        </footer>
+    </body>
+
+</html>

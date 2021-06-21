@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../../../static/css/reset.css">
+        <link rel="stylesheet" href="../../../static/css/css_header&footer.css">
+        <link rel="stylesheet" href="../../../static/css/page/article/css_article_page.css">
+        <link rel="stylesheet" href="../../../static/css/page/article/c/css_c_article_001.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    </head>
+    <body>
+
+
+        <header class="clearfix">
+
+            <ul class="banner clearfix" style="list-style-type:none">
+                <li class="logo"><a href="../../../index.html">RubyDog NoteBook</div>
+                    <li class="null">&ensp;</div>
+                    <li class="banner_nav"><a href="../../../index.html">Home</a></li>
+                    <li class="banner_nav"><a href="#">Article</a></li>
+                    <li class="banner_nav"><a href="#">About us</a></li>
+                    <li class="banner_nav"><a href="../../contact.html">Contact us</a></li>
+            </ul>
+
+            <ul class="classification_nav clearfix" style="list-style-type:none">
+                
+                <li class="now_page"><a href="../c/index.html" class="classification_nav_item">C</a></li>
+                <li><a href="../java/index.html" class="classification_nav_item">JAVA</a></li>
+                <li><a href="../python/index.html" class="classification_nav_item">Python</a></li>
+                <li><a href="../web/index.html" class="classification_nav_item">WEB</a></li>
+                <li><a href="../docker/index.html" class="classification_nav_item">Docker</a></li>
+
+
+            </div>
+            
+        </header>
+      
+
+
+        <main class="wrapper">
+                <div class="main-1">
+                    <div class="main-1_all">
+                        <div class="classification_title_text">C</div>
+                        <div class="main-1_title">C語言的指標</div>
+                        <div class="main-1_date">2021/06/06</div>
+                        <div class="main-1_content">
+                            <h3>什麼是指標(pointer)?</h3>
+                            &ensp;&ensp;&ensp;&ensp;當我們宣告一個變數時，程式會像記憶體要一塊空間，
+                                        <br>
+                                        而這個空間的起始位址就會被當作是變數的位址，也就叫做「指向該變數的指標(pointer)」。      
+                                        <br>
+                            &ensp;&ensp;&ensp;&ensp;簡單來說，<b>指標 (Pointer) 就是某變數的位址。</b>
+                            
+                            
+                            <h3>什麼是指標變數(pointer variable)?</h3>
+                            &ensp;&ensp;&ensp;&ensp;「指標(pointer)」不等於「指標變數(pointer variable)」，<br>
+                            <b>指標變數(pointer variable)是用來存放指標的一種變數。</b>
+                            <br>
+                            宣告的方式為：
+<pre>
+int*  pointer_TEST;     
+</pre>
+                            或:
+<pre>
+int  *pointer_TEST;
+</pre>
+
+                            實例說明1:
+<pre>
+b = 2; 
+<b class="b2">//把2這個值給變數b</b>
+ 
+int* pointer; 
+<b class="b2">//跟記憶體要一塊區域稱為pointer,
+//這塊區域專門放指向int型變數的指標(位址)</b>
+ 
+pointer = &b; 
+<b class="b2">//把變數b的地址值給pointer，注意不能寫成 pointer = b;
+//因為 pointer 是專門存放地址的變數。</b>
+    
+<b class="b2">// 如此一來，我們就稱「指標變數 pointer 指向了變數 b」 !!</b>
+
+</pre>
+                            實例說明2:
+<pre>
+#include &lt;stdio.h&gt;
+
+void main(){
+    int c=60;
+    int* pointer2 = &c;
+    
+    <b class="b2">//可以用「*pointer」來拿到變數c。</b>
+    printf("c = %d \n",*pointer2);
+    
+    <b class="b2">//!!重要!!
+    /*這裡的「*」，和宣告指標變數的 int* pointer 的意義不太一樣。
+    反而是和「&」相對應——「&」代表「取出地址」、
+                         「*」代表「取出內容」。*/</b>
+                         
+    <b class="b2">/*所謂的「*pointer 取出的內容」指的到底是變數 b、還是變數 b 的值 2？
+    這兩個是不同的東西喔！  
+    變數 b 是這塊區域，2 是值。
+      
+    答案是：*pointer 代表的就是變數 b。所以我們可以把 *pointer 當作變數 b 來使用。*/</b>        
+
+    
+}
+</pre>
+
+ 
+                            結果:
+                            <div class="output">
+                            c = 60 
+                            </div>
+                            實例說明3:
+                            
+<pre>
+#include &lt;stdio.h&gt;
+
+void main(){
+
+    int d=3;
+    int* pointer3 = &d;
+        
+    printf("變數d值 = %d \n",d);
+    printf("變數d的位址 = %p \n",&d);
+    printf("指標變數pointer3的值 = %p \n",pointer3);
+        
+    printf("\n");
+        
+    *pointer3=9999;
+    printf("指標變數pointer3 = %d \n",*pointer3);
+    printf("變數d的值 = %d \n",d);
+    printf("指標變數pointer3位址 = %p \n",&pointer3);
+    <b class="b2">/*存放 pointer 這個變數的地址，
+    和變數 b 的地址不一樣，
+    所以利用「&pointer」後，
+    可發現地址「0x7fff551b49c0」和變數 b 的地址果然不一樣。*/</b>      
+
+}
+
+  
+</pre>
+                            <div class="output">
+                                變數d值 = 3 <br>
+                                變數d的位址 = 0x7ffdca914ef4<br> 
+                                指標變數pointer3的值 = 0x7ffdca914ef4<br> 
+                                指標變數pointer3 = 9999 <br>
+                                變數d的值 = 9999 <br>
+                                指標變數pointer3位址 = 0x7ffdca914ef8<br> 
+
+                            </div>
+
+
+
+                            <h3>「&a」與「*&a」</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+void main(){
+
+    int a = 1;
+    printf("變數a的值 a = %d\n",a);
+    printf("變數a的位址 &a = %p\n",&a);   
+}
+</pre>    
+
+
+結果:
+                            <div class="output">
+                                變數a的值 a = 5
+                                <br>
+                                變數a的位址 &a = 0x7ffd4915661c 
+                            </div>
+                            <b>「&」為「位址運算子」 用來取得變數的位址。</b> 
+                            <br>
+                            在變數前加上「&」，便可取得該變數在記憶體中的位址。
+                            <br>
+                            <b>「%p」是用來印出指標型態的值。</b> 
+                            <br>
+<pre>
+#include &lt;stdio.h&gt;
+
+void main(){
+
+    int a = 1;
+
+    printf("變數a的值 a = %d\n",a);
+    printf("變數a的位址 &a = %p\n",&a);  
+    printf("變數a的值 *&a = %d\n",*&a);
+
+}
+</pre>                  結果:
+                        <div class="output">
+                            變數a的值 a = 5
+                            <br>
+                            變數a的位址 &a = 0x7ffd4915661c 
+                            <br>
+                            變數a的值 *&a = 5
+
+                        </div>       
+                        <b>「 *」為「依址取值運算子」 用來取得指標所指向的變數內容。</b>
+                        <br>
+                        在指標變數前加上*，表示以位址找到記憶體存放的值。
+                        <br>
+                        <b>「*&b」和「b 」的意義是等價的。</b>
+                            
+
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+            <div class="push"></div>
+        </main>
+      
+        
+        
+
+
+        <footer class="footer">
+            <div class="footer_all">
+                <div class="footer_title">
+                    ©&ensp;RubyDog&ensp;NoteBook&ensp;2021
+                </div>
+
+            </div>
+        </footer>
+    </body>
+
+</html>
